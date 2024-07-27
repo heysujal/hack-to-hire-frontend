@@ -1,0 +1,10 @@
+ 
+.globe-bg{
+  /* position: absolute; */
+  /* top: 10%; */
+  z-index: -1;
+}
+
+h1.welcome-msg{
+  font-family: IndiGoFont;text-align: center;
+}

@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@font-face {
+  font-family: IndiGoFont;
+  src: url('./assets/Bauhaus_Std_Medium.otf');
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 1px solid black;
+  }
+  html, body {
+    height: 100%;
+  }
+
+
+  
+  body {
+    line-height: 1.6;
+    background: url('./assets/indigo-bg.avif');
+    background-repeat: no-repeat;
+    background-size: cover; 
+  }
