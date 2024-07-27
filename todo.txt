@@ -1,0 +1,10 @@
+TODO
+
+use Number Ticker
+Animated List
+Dock for menu like Home / Tracker
+
+animATED SUBSCRIbe button
+blur in effect for status show
+Text Reveal => Track Flights Like Never Before
+Animated Beam

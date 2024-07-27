@@ -6,10 +6,10 @@ import { useSpring } from "react-spring";
 
 import { cn } from "../../../lib/utils";
 console.log(window)
-const deviceWidth = (window.innerWidth > 0) ? window.innerWidth : screen.width;
+// const deviceWidth = (window.innerWidth > 0) ? window.innerWidth : screen.width;
 const GLOBE_CONFIG: COBEOptions = {
-  width: deviceWidth,
-  height: screen.height,
+  width: 800,
+  height: 800,
   onRender: () => {},
   devicePixelRatio: 2,
   phi: 0,
@@ -18,7 +18,6 @@ const GLOBE_CONFIG: COBEOptions = {
   diffuse: 0.4,
   mapSamples: 16000,
   mapBrightness: 1.2,
-  offset : [0, 400],
   baseColor: [1, 1, 1],
   markerColor: [251 / 255, 100 / 255, 21 / 255],
   glowColor: [1, 1, 1],
