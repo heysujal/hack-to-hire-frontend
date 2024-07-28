@@ -8,3 +8,9 @@ animATED SUBSCRIbe button
 blur in effect for status show
 Text Reveal => Track Flights Like Never Before
 Animated Beam
+rotate to location in Globe usingn CLobe 
+
+
+Mantine Segmented Control
+
+Add Loading Animation for Home Page

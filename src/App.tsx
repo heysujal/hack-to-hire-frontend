@@ -1,21 +1,45 @@
+import Globe from "./components/magicui/globe";
+import "@mantine/core/styles.css";
+import { Image } from "@mantine/core";
+import { MantineProvider } from "@mantine/core";
+import {BrowserRouter, Routes, Route} from 'react-router-dom'
+import Layout from "./components/Layout/Layout";
+import NotFound from "./components/NotFound/NotFound";
+import Home from "./components/Home/Home";
 import "./App.css";
-import Globe from "./components/Globe/magicui/globe";
-
-
-
-
-
+import About from "./components/About/About";
+import Tracker from "./components/Tracker/Tracker";
 function App() {
-
   return (
-    <div>
-        
-      <Globe className='globe-bg'/>
+    <MantineProvider>
 
-      <h1 className="text-3xl font-bold welcome-msg">
-        Welcome to IndiGo Flight Tracker
-      </h1>
-    </div>
+<BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="tracker" element={<Tracker />} />
+          <Route path="about" element={<About />} />
+        </Route>
+         <Route path="*" element={<NotFound />} />
+      </Routes>
+    </BrowserRouter>
+
+      {/* <div>
+        <img
+          className="indigo-logo"
+          src="https://www.goindigo.in/content/dam/s6web/in/en/assets/logo/IndiGo_logo_2x.png"
+          aria-label="Indigo Logo Image"
+          alt="IndiGo Logo"
+          loading="lazy"
+        />
+
+        <h1 className="text-3xl welcome-msg">
+          Welcome to <span className="text-green-600">IndiGo</span> Flight
+          Tracker!
+        </h1>
+        <Globe className="globe" />
+      </div> */}
+    </MantineProvider>
   );
 }
 

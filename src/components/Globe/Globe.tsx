@@ -4,8 +4,7 @@ import { useCallback, useEffect, useRef } from "react";
 import createGlobe, { COBEOptions } from "cobe";
 import { useSpring } from "react-spring";
 
-import { cn } from "../../../lib/utils";
-console.log(window)
+import { cn } from "../../lib/utils";
 // const deviceWidth = (window.innerWidth > 0) ? window.innerWidth : screen.width;
 const GLOBE_CONFIG: COBEOptions = {
   width: 800,
@@ -77,7 +76,7 @@ export default function Globe({
       state.width = width * 2;
       state.height = width * 2;
     },
-    [pointerInteracting, phi, r],
+    [pointerInteracting, phi, r]
   );
 
   const onResize = () => {
@@ -105,17 +104,17 @@ export default function Globe({
     <div
       className={cn(
         "absolute inset-0 mx-auto aspect-[1/1] w-full max-w-[600px]",
-        className,
+        className
       )}
     >
       <canvas
         className={cn(
-          "h-full w-full opacity-0 transition-opacity duration-500 [contain:layout_paint_size]",
+          "h-full w-full opacity-0 transition-opacity duration-500 [contain:layout_paint_size]"
         )}
         ref={canvasRef}
         onPointerDown={(e) =>
           updatePointerInteraction(
-            e.clientX - pointerInteractionMovement.current,
+            e.clientX - pointerInteractionMovement.current
           )
         }
         onPointerUp={() => updatePointerInteraction(null)}

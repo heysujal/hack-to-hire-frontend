@@ -1,10 +1,19 @@
  
-.globe-bg{
+.globe{
   /* position: absolute; */
   /* top: 10%; */
   /* z-index: -1; */
+  margin-top: 200px;
+}
+.indigo-logo{
+  padding-top: 10px;
+  width: 300px;
+  text-align: center;
+  margin: 0 auto;
 }
 
 h1.welcome-msg{
+  margin-top: 10px;
   font-family: IndiGoFont;text-align: center;
+
 }

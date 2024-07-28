@@ -1,0 +1,33 @@
+.flight-animation {
+    position: relative;
+    width: 200px;
+    height: 200px;
+  }
+  
+  .icon-plane {
+    font-size: 2rem;
+    color: #00796b;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: fly 4s linear infinite;
+  }
+  
+  @keyframes fly {
+    0% {
+      transform: translate(-50%, -50%) rotate(0deg) translateX(0);
+    }
+    25% {
+      transform: translate(-50%, -50%) rotate(45deg) translateX(50px);
+    }
+    50% {
+      transform: translate(-50%, -50%) rotate(90deg) translateX(100px);
+    }
+    75% {
+      transform: translate(-50%, -50%) rotate(135deg) translateX(150px);
+    }
+    100% {
+      transform: translate(-50%, -50%) rotate(180deg) translateX(200px);
+    }
+  }
