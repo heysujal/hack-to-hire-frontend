@@ -5,7 +5,7 @@ import { DockMenu } from '../DockMenu/DockMenu'
 
 const Layout = () => {
   return (
-    <div>
+    <div style={{position : 'relative'}}>
         <Outlet/>
         <DockMenu />
     </div>

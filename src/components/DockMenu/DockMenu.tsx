@@ -7,22 +7,15 @@ import { BsInfoCircleFill } from "react-icons/bs";
 import { MdSupportAgent } from "react-icons/md";
 import { MdOutlineFlightTakeoff } from "react-icons/md";
 import { PiAirplaneTakeoffFill } from "react-icons/pi";
+import { GoHomeFill } from "react-icons/go";
 import { SiIndigo } from "react-icons/si";
 import { Link } from "react-router-dom";
 import "./DockMenu.css"
 
 export type IconProps = React.HTMLAttributes<SVGElement>;
-const iconNames = ['home', 'indigo', 'about', 'support'];
-const paths = {
-  home : '',
-  indigo : 'tracker',
-  about : 'about',
-  support : 'support'
-}
-
 const Icons = {
   home: (props: IconProps) => (
-      <AiTwotoneHome {...props} size={200} />
+      <GoHomeFill {...props} size={200} />
   ),
   indigo : (props : IconProps) => (<SiIndigo {...props} size={200} />),
   about: (props: IconProps) => (
@@ -37,7 +30,7 @@ const Icons = {
 
 export function DockMenu() {
   return (
-    <div className="absolute bottom-5 inset-x-0">
+    <div className="fixed bottom-3 inset-x-0">
       <Dock magnification={90} distance={40}>
         <DockIcon className="bg-black/10 dark:bg-white/10 p-2 text-blue-900">
         <Link to={''}>
@@ -45,8 +38,6 @@ export function DockMenu() {
         </Link>
         </DockIcon>
         
-
-
         <DockIcon className="bg-black/10 dark:bg-white/10 p-2 text-blue-900">
         <Link to={'tracker'}>
           <Icons.indigo className="size-full" />
