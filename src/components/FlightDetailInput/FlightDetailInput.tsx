@@ -4,18 +4,22 @@ import DatePicker from "../DatePicker/DatePicker";
 import { DateInput } from "@mantine/dates";
 import axios from 'axios'
 import airports from '../../constants/airports.json'
+import dayjs from 'dayjs'
 import { useSet } from "@mantine/hooks";
+import { useFlightStore } from "../../store/store";
 
 const FlightDetailInput = () => {
-    const [value, setValue] = useState<Date | null>(null);
-    const [flightId, setFlightId] = useState<number | undefined>(undefined);
-    const airportList = airports.map((port)=>{
-        return `${port.IATA_code} - ${port.airport_name}, ${port.city_name}`
-    })
-    const [departureList, setDepartureList] = useState(airportList)
-    const [destinationList, setDestinationList] = useState(airportList)
-    const [selectedDeparture, setSelectedDeparture] = useState(null);
-    const [selectedDestination, setSelectedDestination] = useState(null);
+  const {setFlightResults} = useFlightStore();
+
+  const airportList = airports.map((port)=>{
+    return `${port.IATA_code} - ${port.airport_name}, ${port.city_name}`
+  })
+  const [departureList, setDepartureList] = useState(airportList)
+  const [destinationList, setDestinationList] = useState(airportList)
+  const [selectedDeparture, setSelectedDeparture] = useState('DEL - Indira Gandhi International Airport, New Delhi');
+  const [selectedDestination, setSelectedDestination] = useState("BLR - Bengaluru International Airport, Bangalore");
+  const [selectedDate, setSelectedDate] = useState<Date | null>(new Date('2024-08-03'));
+  const [flightId, setFlightId] = useState<number | undefined>(undefined);
 
 
     useEffect(()=>{
@@ -28,12 +32,24 @@ const FlightDetailInput = () => {
 
     const handleSearch = async (e) => {
         e.preventDefault();
-        console.log()
-        const query = {
-
+        // Extract the selected values
+        const from = selectedDeparture?.split(" - ")[0];
+        const to = selectedDestination?.split(" - ")[0];
+        const date = selectedDate ? dayjs(selectedDate).format('YYYY-MM-DD') : null; // Format to YYYY-MM-DD
+        console.log(from , to ,date);
+        // Build the query string
+        let query = `from=${from}&to=${to}&date=${date}`;
+        if (flightId) {
+          query += `&flight_id=6E ${flightId}`;
         }
-        const {data} = axios.get('http:localhost:3000/search');
-        console.log(data);
+        console.log(query)
+        try { 
+          const {data} =  await axios.get(`http://localhost:3000/api/flights/search?${query}`);
+          console.log(data);
+          setFlightResults(data)
+        } catch (error) {
+          console.log("Error fetching flight data:",error) 
+        }
     }
   
   
@@ -79,9 +95,10 @@ const FlightDetailInput = () => {
       w={300}
       size='lg'
       radius="lg"
-      value={value}
+      value={selectedDate}
+      valueFormat="YYYY-MM-DD"
       minDate={new Date()}
-      onChange={setValue}
+      onChange={setSelectedDate}
       label="Date input"
       placeholder="Date input"
     />
@@ -93,6 +110,7 @@ const FlightDetailInput = () => {
       leftSection={flightIdPrefix}
       placeholder="e.g. 4321"
       value={flightId}
+      onChange={setFlightId}
       hideControls
       allowDecimal={false}
       allowNegative={false}
@@ -103,7 +121,7 @@ const FlightDetailInput = () => {
       </div>
 
       <div className="text-center pt-3">
-        <button onClick={handleSearch} className="w-60 mt-10 mb-36 bg-indigo-800 hover:bg-indigo-900 focus:ring text-white font-bold py-4 px-8 rounded-full">Go!</button>
+        <button onClick={handleSearch} className="w-60 mt-10 mb-16 bg-indigo-800 hover:bg-indigo-900 focus:ring text-white font-bold py-4 px-8 rounded-full">Go!</button>
 
       </div>
     </form>

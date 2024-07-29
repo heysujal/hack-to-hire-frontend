@@ -1,7 +1,9 @@
 import { create } from 'zustand'
 
-const useStore = create((set) => ({
+export const useFlightStore = create((set) => ({
   bears: 0,
+  flightResults : [],
+  setFlightResults : (newFlightResults) => set({flightResults: newFlightResults}),
   getAllAirport : async () => {
 
   },
@@ -10,5 +12,3 @@ const useStore = create((set) => ({
   updateBears: (newBears) => set({ bears: newBears }),
 }))
 
-
-export default useStore
