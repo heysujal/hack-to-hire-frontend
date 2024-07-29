@@ -29,25 +29,25 @@ export function DockMenu() {
   return (
     <div className="fixed bottom-3 inset-x-0">
       <Dock magnification={90} distance={40}>
-        <DockIcon className="bg-black/10 dark:bg-white/10 p-2 text-blue-900">
+        <DockIcon className="bg-black/10 dark:bg-white/10 p-2 text-indigo-900">
         <Link to={''}>
           <Icons.home className="size-full" />
         </Link>
         </DockIcon>
         
         {/* <DockIcon className="bg-black/10 dark:bg-white/20 p-2 text-blue-900"> */}
-        <DockIcon className="bg-indigo-800 p-3 text-white">
+        <DockIcon className="bg-indigo-800/90 p-3 text-white">
         <Link to={'tracker'}>
           <Icons.indigo className="size-full" />
         </Link>
         </DockIcon>
 
-        <DockIcon className="bg-black/10 dark:bg-white/10 p-2 text-blue-900">
+        <DockIcon className="bg-black/10 dark:bg-white/10 p-2 text-indigo-900">
         <Link to={'about'}>
           <Icons.about className="size-full" />
         </Link>
         </DockIcon>
-        <DockIcon className="bg-black/10 dark:bg-white/10 p-2 text-blue-900">
+        <DockIcon className="bg-black/10 dark:bg-white/10 p-2 text-indigo-900">
         <Link to={'#'}>
           <Icons.support className="size-full" />
         </Link>

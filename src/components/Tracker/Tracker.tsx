@@ -23,6 +23,9 @@ const Tracker = () => {
 </Title> */}
 
           <FlightDetailInput/>
+
+          
+
     </div>
   )
 }

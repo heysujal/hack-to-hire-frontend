@@ -8,9 +8,7 @@
         "scheduled_departure": "2024-07-26T14:00:00Z",
         "scheduled_arrival": "2024-07-26T18:00:00Z",
         "actual_departure": null,
-        "actual_arrival": null,
-        "from" : "New Delhi",
-        "to" : "Bengaluru"
+        "actual_arrival": null
     },
     {
         "flight_id": "6E 2342",
@@ -21,9 +19,7 @@
         "scheduled_departure": "2024-07-26T16:00:00Z",
         "scheduled_arrival": "2024-07-26T20:00:00Z",
         "actual_departure": null,
-        "actual_arrival": null,
-                "from" : "New Delhi",
-        "to" : "Bengaluru"
+        "actual_arrival": null
     },
     {
         "flight_id": "6E 2343",
@@ -34,8 +30,6 @@
         "scheduled_departure": "2024-07-26T12:00:00Z",
         "scheduled_arrival": "2024-07-26T16:00:00Z",
         "actual_departure": null,
-        "actual_arrival": null,
-           "from" : "New Delhi",
-        "to" : "Bengaluru"
+        "actual_arrival": null
     }
 ]

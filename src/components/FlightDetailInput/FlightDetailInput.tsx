@@ -2,6 +2,7 @@ import { Button, NumberInput, Select } from "@mantine/core";
 import React, { useEffect, useState } from "react";
 import DatePicker from "../DatePicker/DatePicker";
 import { DateInput } from "@mantine/dates";
+import axios from 'axios'
 import airports from '../../constants/airports.json'
 import { useSet } from "@mantine/hooks";
 
@@ -24,6 +25,16 @@ const FlightDetailInput = () => {
         setDepartureList(departureOptions)
         setDestinationList(destinationOptions)
     },[selectedDeparture, selectedDestination])
+
+    const handleSearch = async (e) => {
+        e.preventDefault();
+        console.log()
+        const query = {
+
+        }
+        const {data} = axios.get('http:localhost:3000/search');
+        console.log(data);
+    }
   
   
     return (
@@ -92,7 +103,7 @@ const FlightDetailInput = () => {
       </div>
 
       <div className="text-center pt-3">
-        <button className="w-60 mt-10 mb-36 bg-indigo-800 hover:bg-indigo-900 focus:ring text-white font-bold py-4 px-8 rounded-full">Go!</button>
+        <button onClick={handleSearch} className="w-60 mt-10 mb-36 bg-indigo-800 hover:bg-indigo-900 focus:ring text-white font-bold py-4 px-8 rounded-full">Go!</button>
 
       </div>
     </form>
