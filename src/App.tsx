@@ -1,5 +1,6 @@
 import Globe from "./components/magicui/globe";
 import "@mantine/core/styles.css";
+import '@mantine/dates/styles.css';
 import { Image } from "@mantine/core";
 import { MantineProvider } from "@mantine/core";
 import {BrowserRouter, Routes, Route} from 'react-router-dom'

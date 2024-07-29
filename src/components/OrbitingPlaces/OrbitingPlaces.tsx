@@ -12,7 +12,7 @@ import statueOfUnity from '../../assets/statue-of-unity.png'
 
 export function OrbitingPlaces() {
   return (
-    <div className="border-none relative flex h-[600px] w-full flex-col items-center justify-center overflow-hidden rounded-lg border bg-background md:shadow-xl">
+    <div className="border-none relative flex h-[600px] w-full flex-col items-center justify-center overflow-hidden rounded-lg bg-background">
       <span className="pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-black to-gray-300 bg-clip-text text-center text-8xl font-semibold leading-none text-transparent dark:from-white dark:to-black">
         <SiIndigo size={50} className="text-blue-900"/>
       </span>
@@ -22,8 +22,9 @@ export function OrbitingPlaces() {
         className="size-[50px] border-5 bg-transparent"
         duration={15}
         radius={90}
+        
       >
-        <Icons.tajmahal />
+        <Icons.tajmahal/>
       </OrbitingCircles>
       <OrbitingCircles
         className="size-[60px] border-5 bg-transparent"
@@ -100,14 +101,14 @@ export function OrbitingPlaces() {
 }
 
 const Icons = {
-    tajmahal : () => (<img src={tajMahal} />),
-    gatewayofindia : () => (<img src={gateWayOfIndia} />),
-    chinatemple : () => (<img src={chinaTemple}/>),
-    eiffeltower : () => (<img src={eiffelTower} />),
-    londonbridge : () => (<img src={londonBridge}/>),
-    burjkhalifa : () => (<img src={burjKhalifa}/>),
-    brazilchrist : () => (<img src={brazilChrist}/>),
-    statueofunity: () => (<img src={statueOfUnity}/>),
-    statueofliberty : () => (<img src={statueOfLiberty}/>),
+    tajmahal : () => (<img src={tajMahal} title="Taj Mahal"/>),
+    gatewayofindia : () => (<img src={gateWayOfIndia}  title="Gateway of India"/>),
+    chinatemple : () => (<img src={chinaTemple} title="China Temple"/>),
+    eiffeltower : () => (<img src={eiffelTower} title="Eiffel Tower"/>),
+    londonbridge : () => (<img title="London Bridge" src={londonBridge}/>),
+    burjkhalifa : () => (<img title="Burj Khalifa" src={burjKhalifa}/>),
+    brazilchrist : () => (<img title="Brazil Christ" src={brazilChrist}/>),
+    statueofunity: () => (<img title="Statue Of Unity" src={statueOfUnity}/>),
+    statueofliberty : () => (<img title="Statue of Liberty" src={statueOfLiberty}/>),
 };
 
