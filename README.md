@@ -2,6 +2,8 @@
 
 ## Real-Time Indigo-Flight Status and Notification System
 
+### Preview
+![Preview](./project-preview.gif)
 ### Assumptions
 - **Departure Time**: The time at which the flight will depart from the source.
 - **Arrival Time**: The time at which the flight will reach the destination.
