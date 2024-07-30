@@ -5,6 +5,7 @@ import axios from "axios";
 import airports from "../../constants/airports.json";
 import dayjs from "dayjs";
 import { useFlightStore } from "../../store/store";
+import { SERVER_ENDPOINT } from "../../constants/api";
 
 const FlightDetailInput = () => {
   const { setFlightResults } = useFlightStore();
@@ -52,7 +53,7 @@ const FlightDetailInput = () => {
     console.log(query);
     try {
       const { data } = await axios.get(
-        `http://localhost:3000/api/flights/search?${query}`
+        `${SERVER_ENDPOINT}/flights/search?${query}`
       );
       console.log(data);
       setFlightResults(data);

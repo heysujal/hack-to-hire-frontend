@@ -16,6 +16,7 @@ import duration from "dayjs/plugin/duration";
 import "dayjs/locale/en-gb";
 import { BsBell } from "react-icons/bs";
 import axios from "axios";
+import { SERVER_ENDPOINT } from "../../constants/api";
 
 dayjs.extend(duration);
 
@@ -66,7 +67,7 @@ const FlightAccordion = () => {
     try {
       console.log(contactInfo, details);
       const { data } = await axios.post(
-        `http://localhost:3000/api/subscriptions/${selectedFlight}/subscribe`,
+        `${SERVER_ENDPOINT}/subscriptions/${selectedFlight}/subscribe`,
         details
       );
       console.log(data);
