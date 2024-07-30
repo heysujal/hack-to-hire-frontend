@@ -48,7 +48,7 @@ export function DockMenu() {
         </Link>
         </DockIcon>
         <DockIcon className="bg-black/10 dark:bg-white/10 p-2 text-indigo-900">
-        <Link to={'#'}>
+        <Link to={'support'}>
           <Icons.support className="size-full" />
         </Link>
         </DockIcon>
