@@ -23,14 +23,16 @@
 2. View all matching flights.
 3. Expand results for more details.
 4. Subscribe using email, phone, or app notifications.
+5. Duplicate details for the same flightId will throw error.
 
 ### Admin Route
-- **Endpoint**: `/api/admin/`
-- **Access**: Requires login.
+- **Route**: `/admin`
+- **Access**: Requires login. Upon login redirects to `/update` route. For Signup no UI is there, only API is available.
 - **Functionality**:
   - Enter a specific flight ID to update details.
   - Editable fields: Scheduled/actual arrival, scheduled/actual departure, gates, status.
   - Read-only fields: Flight number, source, destination.
+  - wait for the alert message to show up.
 
 ### APIs
 - **Flights API** (`/api/flights/`):
