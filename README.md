@@ -1,9 +1,14 @@
 # IndiGo Hack to Hire FrontEnd
 ## Real-Time Indigo-Flight Status and Notification System
-### For backend Code : https://github.com/heysujal/hack-to-hire-backend
+
+#### For backend Code(and detailed API docs) : https://github.com/heysujal/hack-to-hire-backend
 
 ### Preview
 ![Preview](./project-preview.gif)
+
+### How to Run?
+1. `npm i`
+2. `npm run dev`
 ### Assumptions
 - **Departure Time**: The time at which the flight will depart from the source.
 - **Arrival Time**: The time at which the flight will reach the destination.
