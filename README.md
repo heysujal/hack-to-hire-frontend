@@ -29,9 +29,10 @@
 - **Route**: `/admin`
 - **Access**: Requires login. Upon login redirects to `/update` route. For Signup no UI is there, only API is available.
 - **Functionality**:
-  - Enter a specific flight ID to update details.
+  - Enter a specific flightId to update details.
   - Editable fields: Scheduled/actual arrival, scheduled/actual departure, gates, status.
   - Read-only fields: Flight number, source, destination.
+  - On Clicking the update button the backend fetches all the subscribers for the particular flight_id and sends them notifications in their preferred way.
   - wait for the alert message to show up.
 
 ### APIs
