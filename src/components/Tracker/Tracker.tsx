@@ -16,28 +16,25 @@ const Tracker = () => {
       <Text className="text-center">
         Enter details below to check status of flights
       </Text>
- 
+
       <FlightDetailInput />
-      
 
       <Transition
-      mounted={true}
-      transition="slide-up"
-      duration={300}
-      timingFunction="ease"
-    >
-      {(styles) =>     <div style={styles} className="w-6/12 p-2 mx-auto">
-        <Title order={3}>Results</Title>
+        mounted={true}
+        transition="slide-up"
+        duration={300}
+        timingFunction="ease"
+      >
+        {(styles) => (
+          <div style={styles} className="w-6/12 p-2 mx-auto">
+            <Title order={3}>Results</Title>
 
-        <FlightAccordion/>
-
-      </div>}
-  
-    </Transition>
-
+            <FlightAccordion />
+          </div>
+        )}
+      </Transition>
     </div>
   );
-
 };
 
 export default Tracker;

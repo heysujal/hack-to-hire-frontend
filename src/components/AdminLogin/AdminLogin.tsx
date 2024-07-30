@@ -1,41 +1,41 @@
-import { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { Button, TextInput, Container, Title, Paper } from '@mantine/core';
-import { useAdminStore } from '../../store/store';
-import { SERVER_ENDPOINT } from '../../constants/api';
-import axios from 'axios';
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { Button, TextInput, Container, Title, Paper } from "@mantine/core";
+import { useAdminStore } from "../../store/store";
+import { SERVER_ENDPOINT } from "../../constants/api";
+import axios from "axios";
 const AdminLogin = () => {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
   const { isAuthenticated, login } = useAdminStore();
   const navigate = useNavigate();
   const handleLogin = async (e) => {
     e.preventDefault();
-  
+
     try {
       const response = await axios.post(`${SERVER_ENDPOINT}/admin/login`, {
         username,
         password,
       });
-      console.log(response)
+      console.log(response);
       if (response.status === 200) {
         const { token } = response.data;
         // Save the token to local storage or context
-        localStorage.setItem('adminToken', token);
+        localStorage.setItem("adminToken", token);
         login();
       } else {
-        alert('Invalid credentials');
+        alert("Invalid credentials");
       }
     } catch (error) {
-      console.error('Login error:', error);
-      alert('Invalid credentials');
+      console.error("Login error:", error);
+      alert("Invalid credentials");
     }
   };
   useEffect(() => {
-    if(isAuthenticated){
-        navigate('/update')
+    if (isAuthenticated) {
+      navigate("/update");
     }
-  }, [isAuthenticated, navigate])
+  }, [isAuthenticated, navigate]);
 
   return (
     <Container size={420} my={40}>
