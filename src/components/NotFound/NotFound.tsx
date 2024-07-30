@@ -1,8 +1,32 @@
+import { Button, Center, Image, Title } from '@mantine/core'
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const NotFound = () => {
   return (
-    <div>NotFound</div>
+    <>
+    
+    
+    
+    
+    <Center >
+    
+    <Title size={100} className='mt-32'>
+    ⚠️ 404: Not Found! 
+
+    </Title>
+    </Center>
+
+ <Center>
+
+<Link to={'/'}>
+<Button size='xl' className='mt-10'>Go Home</Button>
+</Link>
+
+
+ </Center>
+    
+    </>
   )
 }
 
