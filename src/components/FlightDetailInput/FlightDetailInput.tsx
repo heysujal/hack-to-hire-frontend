@@ -108,7 +108,7 @@ const FlightDetailInput = () => {
       radius="lg"
       label="Flight Id"
       leftSection={flightIdPrefix}
-      placeholder="e.g. 4321"
+      placeholder="e.g. 1003"
       value={flightId}
       onChange={setFlightId}
       hideControls
