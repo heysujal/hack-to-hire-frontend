@@ -1,11 +1,7 @@
 import { Text, Title, Transition } from "@mantine/core";
-import React from "react";
 import FlightDetailInput from "../FlightDetailInput/FlightDetailInput";
-import DatePicker from "../DatePicker/DatePicker";
-import {useFlightStore} from "../../store/store";
 import FlightAccordion from "../FlightAccordion/FlightAccordion";
 const Tracker = () => {
-  const {flightResults} = useFlightStore();
   return (
     <div>
       <Title className="font-[IndiGoFont] my-5 text-center text-6xl">
@@ -20,9 +16,6 @@ const Tracker = () => {
       <Text className="text-center">
         Enter details below to check status of flights
       </Text>
-      {/* <Title className="font-[IndiGoFont] my-5 text-center text-8xl bg-gradient-to-r from-saffron via-white to-green bg-[length:200%_200%] bg-clip-text text-transparent animate-flow">
-  IndiGo Flight Tracker
-</Title> */}
  
       <FlightDetailInput />
       

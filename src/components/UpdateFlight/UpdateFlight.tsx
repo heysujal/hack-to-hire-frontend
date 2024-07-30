@@ -1,64 +1,4 @@
-// import React, { useState } from 'react';
-// import { TextInput, Button, Container, Title, Paper, NumberInput, Center } from '@mantine/core';
-// import axios from 'axios';
-// import { SERVER_ENDPOINT } from '../../constants/api';
-
-// const UpdateFlight = () => {
-//   const [flightId, setFlightId] = useState(undefined);
-//   const [showEditor, setShowEditor] = useState(false);
-//   const handleUpdate = async (e) => {
-//     e.preventDefault();
-//     // Add logic to update flight information
-//     console.log('Flight ID:', flightId);
-//     const data = await axios.get(`${SERVER_ENDPOINT}/flights/6E ${flightId}`)
-//     console.log(data)
-//   };
-
-//   return (
-//     <Container size={420} my={40}>
-//       <Title align="center">Update Flight</Title>
-//       <Paper withBorder shadow="md" p={30} mt={30} radius="md">
-//         <form onSubmit={handleUpdate}>
-//               <NumberInput
-        
-//       label="Flight Id"
-//       leftSection={flightIdPrefix}
-//       placeholder="e.g. 1003"
-//       value={flightId}
-//       onChange={setFlightId}
-//       hideControls
-//       allowDecimal={false}
-//       allowNegative={false}
-//       allowLeadingZeros={false}
-//       clampBehavior="none"
-//       required
-      
-//     />
-  
-//     <Center>
-
-
-//           <Button  mt="xl" type="submit">
-//             Search
-//           </Button>
-
-//     </Center>
-
- 
-//         </form>
-//       </Paper>
-//     </Container>
-//   );
-// };
-
-// export default UpdateFlight;
-
-
-
-
-// const flightIdPrefix = <p className="text-lg font-bold text-black">6E</p>;
-
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { TextInput, Button, Container, Title, Paper, NumberInput, Center, Select } from '@mantine/core';
 import { DateTimePicker } from '@mantine/dates';
 import axios from 'axios';
@@ -91,7 +31,7 @@ const UpdateFlight = () => {
         alert('Flight updated successfully!');
       } catch (error) {
         console.error('Error updating flight:', error);
-        alert('Error updating flight.');
+        alert('Error updating flight or sending notification');
       }
     }
   };
@@ -113,7 +53,7 @@ const UpdateFlight = () => {
               <NumberInput
                 label="Flight Id"
                 leftSection={flightIdPrefix}
-                placeholder="e.g. 1003"
+                placeholder="e.g. 1001"
                 value={flightId}
                 onChange={(value) => setFlightId(value)}
                 hideControls

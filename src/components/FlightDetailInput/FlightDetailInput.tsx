@@ -1,11 +1,9 @@
-import { Button, NumberInput, Select } from "@mantine/core";
-import React, { useEffect, useState } from "react";
-import DatePicker from "../DatePicker/DatePicker";
+import { NumberInput, Select } from "@mantine/core";
+import { useEffect, useState } from "react";
 import { DateInput } from "@mantine/dates";
 import axios from 'axios'
 import airports from '../../constants/airports.json'
 import dayjs from 'dayjs'
-import { useSet } from "@mantine/hooks";
 import { useFlightStore } from "../../store/store";
 
 const FlightDetailInput = () => {
