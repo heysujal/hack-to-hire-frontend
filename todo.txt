@@ -13,8 +13,9 @@ Animated List for Notifications
 Move Dropdown list to DB maybe?
 Delete Dead Components and Code
 Put TExt Reveal in Center
-Mantine Timeline
 
+Mantine Timeline
+Maintain Readme
 
 DONE 
 Dock for menu like Home / Tracker

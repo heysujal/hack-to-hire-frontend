@@ -28,7 +28,7 @@ const Icons = {
 export function DockMenu() {
   return (
     <div className="fixed bottom-3 inset-x-0">
-      <Dock magnification={90} distance={40}>
+      <Dock magnification={60} distance={40}>
         <DockIcon className="bg-black/10 dark:bg-white/10 p-2 text-indigo-900">
         <Link to={''}>
           <Icons.home className="size-full" />

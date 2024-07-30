@@ -3,14 +3,18 @@ import "@mantine/core/styles.css";
 import '@mantine/dates/styles.css';
 import { Image } from "@mantine/core";
 import { MantineProvider } from "@mantine/core";
-import {BrowserRouter, Routes, Route} from 'react-router-dom'
+import {BrowserRouter, Routes, Route, Navigate} from 'react-router-dom'
 import Layout from "./components/Layout/Layout";
 import NotFound from "./components/NotFound/NotFound";
 import Home from "./components/Home/Home";
 import "./App.css";
 import About from "./components/About/About";
 import Tracker from "./components/Tracker/Tracker";
+import AdminLogin from "./components/AdminLogin/AdminLogin";
+import UpdateFlight from "./components/UpdateFlight/UpdateFlight";
+import { useAdminStore } from "./store/store";
 function App() {
+  const {isAuthenticated} = useAdminStore();
   return (
     <MantineProvider>
 
@@ -21,6 +25,8 @@ function App() {
           <Route path="tracker" element={<Tracker />} />
           <Route path="about" element={<About />} />
         </Route>
+        <Route path="admin" element={<AdminLogin/>}/>
+        <Route path="update" element={isAuthenticated ? <UpdateFlight/> :  <Navigate to="/admin" />}/>
          <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>

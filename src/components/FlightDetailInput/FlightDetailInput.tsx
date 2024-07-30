@@ -55,7 +55,7 @@ const FlightDetailInput = () => {
   
     return (
 
-    <form className="w-6/12 p-2 mx-auto" action="">
+    <form onSubmit={handleSearch} className="w-6/12 p-2 mx-auto" action="">
       <div className="place-container my-4 flex justify-between">
         <Select
         w={300}
@@ -101,6 +101,7 @@ const FlightDetailInput = () => {
       onChange={setSelectedDate}
       label="Date input"
       placeholder="Date input"
+      clearable
     />
         <NumberInput
         w={300}
@@ -121,7 +122,7 @@ const FlightDetailInput = () => {
       </div>
 
       <div className="text-center pt-3">
-        <button onClick={handleSearch} className="w-60 mt-10 mb-16 bg-indigo-800 hover:bg-indigo-900 focus:ring text-white font-bold py-4 px-8 rounded-full">Go!</button>
+        <button className="w-60 mt-10 mb-16 bg-indigo-800 hover:bg-indigo-900 focus:ring text-white font-bold py-4 px-8 rounded-full">Go!</button>
 
       </div>
     </form>

@@ -3,6 +3,7 @@ import { create } from 'zustand'
 export const useFlightStore = create((set) => ({
   bears: 0,
   flightResults : [],
+
   setFlightResults : (newFlightResults) => set({flightResults: newFlightResults}),
   getAllAirport : async () => {
 
@@ -12,3 +13,8 @@ export const useFlightStore = create((set) => ({
   updateBears: (newBears) => set({ bears: newBears }),
 }))
 
+export const useAdminStore = create((set) => ({
+    isAuthenticated: false,
+    login: () => set({ isAuthenticated: true }),
+    logout: () => set({ isAuthenticated: false }),
+}))
