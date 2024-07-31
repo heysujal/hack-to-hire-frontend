@@ -38,9 +38,19 @@ const UpdateFlight = () => {
     if (flightDetails) {
       setStatus('Updating...')
       try {
+        let updates = {
+          "status": flightDetails?.status,
+          "departure_gate": flightDetails?.departure_gate,
+          "arrival_gate": flightDetails?.arrival_gate,
+          "scheduled_departure": flightDetails?.scheduled_departure,
+          "scheduled_arrival": flightDetails?.scheduled_arrival,
+          "actual_departure": flightDetails?.actual_departure,
+          "actual_arrival": flightDetails?.actual_arrival,
+      }
+      console.log(updates)
         const response = await axios.put(
-          `${SERVER_ENDPOINT}/admin/flights/${flightDetails._id}`,
-          flightDetails
+          `${SERVER_ENDPOINT}/admin/flights/${flightDetails.flight_id}`,
+          updates
         );
         console.log("Flight updated successfully:", response.data);
         setStatus("Flight updated successfully!");
