@@ -6,6 +6,31 @@
 ### Preview
 ![Preview](./project-preview.gif)
 
+### ScreenShots
+User View
+
+![Screenshot (19)](https://github.com/user-attachments/assets/3e9fb789-594c-4d4c-b652-c7c53e36a100)
+![Screenshot (20)](https://github.com/user-attachments/assets/5dc80010-570d-41a2-a3a0-aa1bbff777dc)
+![Screenshot (23)](https://github.com/user-attachments/assets/5f046aac-1d5f-4c4c-87bf-25229040e3d2)
+![Screenshot (24)](https://github.com/user-attachments/assets/0dd6e4da-025c-44fb-b08a-0e8d1437a308)
+
+#### Admin View
+
+`/admin` route
+
+![Screenshot (26)](https://github.com/user-attachments/assets/b97c775a-0e5b-43ef-b8a9-b1cda79416ac)
+![Screenshot (27)](https://github.com/user-attachments/assets/54018278-b7d9-48d3-bc7b-637fab2501d1)
+
+Changing the status of Flight 1003 From "Arrived" to "Delayed"
+
+![Screenshot (29)](https://github.com/user-attachments/assets/21f5fae8-1b21-48da-a994-9bde7f2fdaab)
+
+#### User View
+Notification Received on Tracker Page
+
+![Screenshot (30)](https://github.com/user-attachments/assets/283c2c05-33b3-41b7-b6e6-13e9e109135a)
+
+
 ### How to Run?
 1. `npm i`
 2. Configure SERVER_URL and SERVER_ENDPOINT as per choice in `constants/api.ts`
