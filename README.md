@@ -4,9 +4,6 @@
 #### For backend Code(and detailed API docs) : https://github.com/heysujal/hack-to-hire-backend
 
 ### Preview
-![Preview](./project-preview.gif)
-
-### ScreenShots
 User View
 
 ![Screenshot (19)](https://github.com/user-attachments/assets/3e9fb789-594c-4d4c-b652-c7c53e36a100)
