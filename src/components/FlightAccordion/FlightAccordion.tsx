@@ -8,6 +8,7 @@ import {
   Group,
   TextInput,
   NumberInput,
+  Switch,
 } from "@mantine/core";
 import { useFlightStore } from "../../store/store";
 import indigoPlaneLogo from "../../assets/indigo-plane-logo.png";
@@ -42,6 +43,7 @@ const FlightAccordion = () => {
   const [openedModal, setOpenedModal] = useState(false);
   const [selectedNotificationMethod, setSelectedNotificationMethod] =
     useState("email");
+  const [checked, setChecked] = useState(false);
   const [contactInfo, setContactInfo] = useState("");
   const [selectedFlight, setSelectedFlight] = useState("");
   const [error, setError] = useState(null);
@@ -191,6 +193,11 @@ const FlightAccordion = () => {
       >
         <form onSubmit={handleNotificationSubmit}>
           <div className="flex flex-col space-y-4">
+          <Switch
+      checked={checked}
+      onChange={(event) => setChecked(event.currentTarget.checked)}
+      label={`App notifications for this flight are turned ${checked ? 'on' : 'off'}`}
+   />
             <Radio.Group
               value={selectedNotificationMethod}
               onChange={setSelectedNotificationMethod}
@@ -199,7 +206,6 @@ const FlightAccordion = () => {
               <Group>
                 <Radio value="email" label="Email" />
                 <Radio value="phone" label="Phone" />
-                {/* <Radio value="app" label="App" /> */}
               </Group>
             </Radio.Group>
 
@@ -232,7 +238,7 @@ const FlightAccordion = () => {
 
             {error && <div className="text-red-500">{error}</div>}
 
-            <Button color="blue" type="submit">
+            <Button color="blue" type="submit" disabled={contactInfo === ''}>
               Submit
             </Button>
           </div>
