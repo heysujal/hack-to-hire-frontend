@@ -8,7 +8,9 @@
 
 ### How to Run?
 1. `npm i`
+2. Configure SERVER_URL and SERVER_ENDPOINT as per choice in `constants/api.ts`
 2. `npm run dev`
+
 ### Assumptions
 - **Departure Time**: The time at which the flight will depart from the source.
 - **Arrival Time**: The time at which the flight will reach the destination.

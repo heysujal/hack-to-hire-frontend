@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Accordion,
   Badge,
@@ -39,7 +39,7 @@ const calculateDuration = (start, end) => {
 };
 
 const FlightAccordion = () => {
-  const { flightResults } = useFlightStore();
+  const { flightResults, subscribedFlights, subscribeFlight, unsubscribeFlight } = useFlightStore();
   const [openedModal, setOpenedModal] = useState(false);
   const [selectedNotificationMethod, setSelectedNotificationMethod] =
     useState("email");
@@ -194,9 +194,19 @@ const FlightAccordion = () => {
         <form onSubmit={handleNotificationSubmit}>
           <div className="flex flex-col space-y-4">
           <Switch
-      checked={checked}
-      onChange={(event) => setChecked(event.currentTarget.checked)}
-      label={`App notifications for this flight are turned ${checked ? 'on' : 'off'}`}
+      checked={subscribedFlights.has(selectedFlight)}
+      onChange={(event) => {
+        if(event.currentTarget.checked){
+          subscribeFlight(selectedFlight)
+        }
+        else{
+          if(subscribedFlights.has(selectedFlight)){
+            unsubscribeFlight(selectedFlight)
+          }
+        }
+        setChecked(event.currentTarget.checked)
+      }}
+      label={`App notifications for this flight are turned ${checked ? 'on' : 'off'}. You can close this box after changing this setting`}
    />
             <Radio.Group
               value={selectedNotificationMethod}
