@@ -17,7 +17,7 @@ const UpdateFlight = () => {
   const [flightId, setFlightId] = useState("");
   const [flightDetails, setFlightDetails] = useState(null);
   const [showEditor, setShowEditor] = useState(false);
-
+  const [status, setStatus] = useState('');
   const handleSearch = async (e) => {
     e.preventDefault();
     try {
@@ -36,16 +36,18 @@ const UpdateFlight = () => {
     e.preventDefault();
     console.log(flightDetails);
     if (flightDetails) {
+      setStatus('Updating...')
       try {
         const response = await axios.put(
           `${SERVER_ENDPOINT}/admin/flights/${flightDetails._id}`,
           flightDetails
         );
         console.log("Flight updated successfully:", response.data);
-        alert("Flight updated successfully!");
+        setStatus("Flight updated successfully!");
       } catch (error) {
         console.error("Error updating flight:", error);
         alert("Error updating flight or sending notification");
+        setStatus('Updation Failed!')
       }
     }
   };
@@ -184,6 +186,9 @@ const UpdateFlight = () => {
                 <Button mt="xl" type="submit">
                   Update
                 </Button>
+              </Center>
+              <Center>
+                <h1>{status}</h1>
               </Center>
             </>
           )}
