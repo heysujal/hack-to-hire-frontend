@@ -199,6 +199,7 @@ const FlightAccordion = () => {
               <Group>
                 <Radio value="email" label="Email" />
                 <Radio value="phone" label="Phone" />
+                {/* <Radio value="app" label="App" /> */}
               </Group>
             </Radio.Group>
 
@@ -217,8 +218,8 @@ const FlightAccordion = () => {
               <NumberInput
                 required
                 type="tel"
-                label="Phone Number"
-                placeholder="Enter your phone number"
+                label="Phone Number with country code without + sign"
+                placeholder="E.g. 919212017607"
                 hideControls
                 allowDecimal={false}
                 allowNegative={false}
