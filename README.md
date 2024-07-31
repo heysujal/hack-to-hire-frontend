@@ -14,6 +14,7 @@
 ### Assumptions
 - **Departure Time**: The time at which the flight will depart from the source.
 - **Arrival Time**: The time at which the flight will reach the destination.
+- **App**: User will be able see app notifications only if, he is on `/tracker` route and has subscribed for app notifications for a flight. If the user refreshes the app he will not get notifications again.
 
 ### Tech Stack
 - **Frontend**: React, CSS, JavaScript, TypeScript
